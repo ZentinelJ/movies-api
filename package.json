@@ -1,0 +1,16 @@
+{
+  "name": "movies-api",
+  "version": "1.0.0",
+  "description": "API REST para administrar películas y series (Proyecto Integrado II, IU Digital)",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch src/app.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.4"
+  }
+}
