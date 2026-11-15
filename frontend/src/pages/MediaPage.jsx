@@ -152,10 +152,7 @@ function MediaPage() {
 
   return (
     <>
-      <h1 className="h3">Películas y series</h1>
-      <p className="text-muted">
-        Solo se pueden escoger géneros, directores y productoras activos.
-      </p>
+      <h1 className="h3 mb-4">Películas y series</h1>
 
       <div className="card mb-4">
         <div className="card-body">

@@ -13,7 +13,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark navbar-tmdb">
+    <nav className="navbar navbar-expand-lg navbar-dark navbar-app">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
           Movies IU Digital

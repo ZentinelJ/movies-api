@@ -69,8 +69,7 @@ function TypesPage() {
 
   return (
     <>
-      <h1 className="h3">Tipos</h1>
-      <p className="text-muted">Los tipos no se eliminan ni tienen estado.</p>
+      <h1 className="h3 mb-4">Tipos</h1>
 
       <div className="card mb-4">
         <div className="card-body">

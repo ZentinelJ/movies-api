@@ -71,8 +71,7 @@ function ProducersPage() {
 
   return (
     <>
-      <h1 className="h3">Productoras</h1>
-      <p className="text-muted">Las productoras no se eliminan; se inactivan.</p>
+      <h1 className="h3 mb-4">Productoras</h1>
 
       <div className="card mb-4">
         <div className="card-body">

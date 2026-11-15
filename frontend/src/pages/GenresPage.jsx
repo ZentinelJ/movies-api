@@ -70,8 +70,7 @@ function GenresPage() {
 
   return (
     <>
-      <h1 className="h3">Géneros</h1>
-      <p className="text-muted">Los géneros no se eliminan; se inactivan.</p>
+      <h1 className="h3 mb-4">Géneros</h1>
 
       <div className="card mb-4">
         <div className="card-body">
