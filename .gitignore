@@ -7,3 +7,7 @@ node_modules/
 Thumbs.db
 .vscode/
 .idea/
+
+# Archivos locales de la app de Postman (la colección del proyecto está en backend/postman/)
+/.postman/
+/postman/
