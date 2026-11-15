@@ -57,7 +57,7 @@ El proyecto sigue MVC. Como es una API, no hay vistas: las respuestas son JSON.
 
 ```bash
 git clone <URL del repositorio>
-cd movies-api
+cd movies-api/backend
 npm install
 ```
 
