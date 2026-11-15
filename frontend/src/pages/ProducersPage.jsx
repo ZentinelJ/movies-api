@@ -8,6 +8,7 @@ function ProducersPage() {
   const [producers, setProducers] = useState([]);
   const [form, setForm] = useState(EMPTY_FORM);
   const [editingId, setEditingId] = useState(null);
+  const [saving, setSaving] = useState(false);
 
   const showError = (error) => {
     Swal.fire({
@@ -31,6 +32,7 @@ function ProducersPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSaving(true);
     try {
       if (editingId) {
         await updateProducer(editingId, form);
@@ -50,6 +52,8 @@ function ProducersPage() {
       loadProducers();
     } catch (error) {
       showError(error);
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -127,7 +131,11 @@ function ProducersPage() {
               </div>
             </div>
             <div className="mt-3">
-              <button type="submit" className="btn btn-primary me-2">
+              <button
+                type="submit"
+                className="btn btn-primary me-2"
+                disabled={saving}
+              >
                 Guardar
               </button>
               {editingId && (

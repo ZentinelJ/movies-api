@@ -32,6 +32,7 @@ function MediaPage() {
   const [types, setTypes] = useState([]);
   const [form, setForm] = useState(EMPTY_FORM);
   const [editingId, setEditingId] = useState(null);
+  const [saving, setSaving] = useState(false);
 
   const showError = (error) => {
     Swal.fire({
@@ -73,6 +74,7 @@ function MediaPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setSaving(true);
     const data = { ...form, releaseYear: Number(form.releaseYear) };
     try {
       if (editingId) {
@@ -93,6 +95,8 @@ function MediaPage() {
       loadMedia();
     } catch (error) {
       showError(error);
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -311,7 +315,11 @@ function MediaPage() {
               </div>
             </div>
             <div className="mt-3">
-              <button type="submit" className="btn btn-primary me-2">
+              <button
+                type="submit"
+                className="btn btn-primary me-2"
+                disabled={saving}
+              >
                 Guardar
               </button>
               {editingId && (
@@ -339,6 +347,7 @@ function MediaPage() {
               <th>Género</th>
               <th>Director</th>
               <th>Productora</th>
+              <th>Creado</th>
               <th>Actualizado</th>
               <th></th>
             </tr>
@@ -346,7 +355,7 @@ function MediaPage() {
           <tbody>
             {media.length === 0 ? (
               <tr>
-                <td colSpan="9" className="text-center text-muted">
+                <td colSpan="10" className="text-center text-muted">
                   No hay películas ni series registradas
                 </td>
               </tr>
@@ -371,6 +380,7 @@ function MediaPage() {
                   <td>{item.genre?.name}</td>
                   <td>{item.director?.names}</td>
                   <td>{item.producer?.name}</td>
+                  <td>{new Date(item.createdAt).toLocaleString("es-CO")}</td>
                   <td>{new Date(item.updatedAt).toLocaleString("es-CO")}</td>
                   <td className="text-nowrap">
                     <button

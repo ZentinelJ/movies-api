@@ -18,6 +18,7 @@ function App() {
           <Route path="/producers" element={<ProducersPage />} />
           <Route path="/types" element={<TypesPage />} />
           <Route path="/media" element={<MediaPage />} />
+          <Route path="*" element={<Navigate to="/media" replace />} />
         </Routes>
       </main>
     </>

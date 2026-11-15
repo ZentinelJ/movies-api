@@ -22,6 +22,7 @@ function Navbar() {
           className="navbar-toggler"
           type="button"
           aria-label="Abrir menú"
+          aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
           <span className="navbar-toggler-icon"></span>
